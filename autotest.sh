@@ -2,6 +2,10 @@
 
 cd ~/catkin_ws/src/burger_war
 
+echo "time, my_score, enemy_score" > result.log
+
+LOOP_N=30
+
 function do_game(){
     GAME_TIME=$1
 
@@ -9,15 +13,16 @@ function do_game(){
     gnome-terminal -e "bash scripts/sim_with_judge.sh"
     sleep 30
     gnome-terminal -e "bash scripts/start.sh"
+
+    #game
     sleep $GAME_TIME
 
     #get result
-    python ../burger_war_autotest/get_score.py > out.log
+    python ~/catkin_ws/src/burger_war_autotest/get_score.py > out.log
     MY_SCORE=`cat out.log | grep -w my_score | cut -d'=' -f2`
     ENEMY_SCORE=`cat out.log | grep -w enemy_score | cut -d'=' -f2`
     DATE=`date --iso-8601=seconds`
-
-    echo "$DATE, $MY_SCORE, $ENEMY_SCORE"
+    echo "$DATE, $MY_SCORE, $ENEMY_SCORE" >> result.log
     
     #stop
     PROCESS_ID=`ps -e -o pid,cmd | grep start.sh | grep -v grep | awk '{print $1}'`
@@ -30,5 +35,10 @@ function do_game(){
     kill $PROCESS_ID
     sleep 30
 }
-do_game 30
 
+# main loop
+LOOP_TIMES=40
+for ((i=0; i<${LOOP_TIMES}; i++));
+do
+    do_game 225 # 180 * 5/4 
+done
