@@ -25,7 +25,7 @@ function do_game(){
     ENEMY_SCORE=`cat out.log | grep -w enemy_score | cut -d'=' -f2`
     DATE=`date --iso-8601=seconds`
     BATTLE_RESULT="LOSE"
-    if [ $MY_SCORE > $ENEMY_SCORE ]; then
+    if [ $MY_SCORE -gt $ENEMY_SCORE ]; then
 	BATTLE_RESULT="WIN"
     fi
 
