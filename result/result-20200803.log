@@ -1,0 +1,5 @@
+iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result
+#--> 2ed8ffe16e88ce589ba89a810bd8e1da3a8d2780
+0, 1, 225, 2020-08-03T05:25:58+00:00, 18, 4, WIN
+0, 2, 225, 2020-08-03T05:30:46+00:00, 9, 2, WIN
+0, 3, 225, 2020-08-03T05:35:34+00:00, 13, 1, WIN
