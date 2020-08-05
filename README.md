@@ -1,7 +1,10 @@
 # burger_war_autotest
-burger_war_autotest
 
-# memo
+# ログ参照方法
+
+resultフォルダの、タイムスタンプが最も新しいログを見て下さい。
+
+# 実行方法
 
 ```
 bash autotest.sh
