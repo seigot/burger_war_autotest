@@ -14,6 +14,7 @@ class Sample():
         self.my_score = 0
         self.enemy_score = 0
         self.FLAG = 0
+        self.COUNT = 0
 
     def stateCallback(self, state):
 
@@ -33,7 +34,11 @@ class Sample():
             r.sleep()
             if self.FLAG > 0:
                 sys.exit(0)
-            
+
+            # error exit
+            self.COUNT += 1
+            if self.COUNT > 3000:
+                sys.exit(0)
 
 if __name__ == '__main__':
     rospy.init_node('sample')

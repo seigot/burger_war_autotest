@@ -27,7 +27,7 @@ function do_game(){
     sleep $GAME_TIME
 
     #get result
-    python ~/catkin_ws/src/burger_war/autotest/get_score.py > out.log
+    timeout 30s python ~/catkin_ws/src/burger_war/autotest/get_score.py > out.log
     MY_SCORE=`cat out.log | grep -w my_score | cut -d'=' -f2`
     ENEMY_SCORE=`cat out.log | grep -w enemy_score | cut -d'=' -f2`
     DATE=`date --iso-8601=seconds`
