@@ -1,0 +1,5 @@
+iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result
+#--> latest commit:46e6b937cec3a583f857add037aa257f96e97ac5
+0, 1, 225, 2020-08-06T03:40:59+00:00, 19, 9, WIN
+0, 2, 225, 2020-08-06T03:45:47+00:00, 9, 2, WIN
+0, 3, 225, 2020-08-06T03:50:35+00:00, 10, 0, WIN
