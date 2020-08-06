@@ -36,6 +36,9 @@ class Sample():
                 sys.exit(0)
 
             # error exit
+            # the case of "no state callback is published".
+            # basically state callback come in 1s,
+            # but sometimes no state callback. when it occurs, go exit..
             self.COUNT += 1
             if self.COUNT > 3000:
                 sys.exit(0)
