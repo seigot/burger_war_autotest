@@ -6,12 +6,12 @@ BURGER_WAR_REPOSITORY=$HOME/catkin_ws/src/burger_war
 BURGER_WAR_AUTOTEST_LOG_REPOSITORY=$HOME/catkin_ws/src/burger_war_autotest
 RESULTLOG=$BURGER_WAR_REPOSITORY/autotest/result.log
 SRC_LOG=$RESULTLOG 
-DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20200803.log
+DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20200826.log
 LATEST_GITLOG_HASH="xxxx"
 
 echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result" > $RESULTLOG
 
-LOOP_TIMES=1
+LOOP_TIMES=10000
 
 function do_game(){
     ITERATION=$1
@@ -86,5 +86,7 @@ do
     do_game ${i} 1 225 # 180 * 5/4 
     do_game ${i} 2 225 # 180 * 5/4 
     do_game ${i} 3 225 # 180 * 5/4
+    do_game ${i} 4 225 # 180 * 5/4
+    do_game ${i} 5 225 # 180 * 5/4
     do_push
 done
