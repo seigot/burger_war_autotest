@@ -140,7 +140,7 @@ def main():
     enemy_bot_level7 = fight_result()
     enemy_bot_level8 = fight_result()
 
-    for line in data[2:-1]:
+    for line in data:
         if 'commit' in line:
             print('detect commit')
             cheese.set_commit_seq()
@@ -257,7 +257,7 @@ def main():
           + '{:.2f}'.format(enemy_bot_level6.enemy_average()).rjust(len('vs enemy_bot_level6'))+'    '
           + '{:.2f}'.format(enemy_bot_level7.enemy_average()).rjust(len('vs enemy_bot_level7'))+'    '
           + '{:.2f}'.format(enemy_bot_level8.enemy_average()).rjust(len('vs enemy_bot_level8')))
-    print('\nnumber of games: '+str(len(enemy_bot_level5.result)))
+    print('\nnumber of games: '+str(len(cheese.result)))
     print('# each enemy_bot is maybe following... in detail, please see enemy_bot/README.md')
     print('#  - level4: old seigot')
     print('#  - level5: 0xDEADBEEF')
