@@ -5,11 +5,12 @@ cd $HOME/catkin_ws/src/burger_war
 BURGER_WAR_REPOSITORY=$HOME/catkin_ws/src/burger_war
 BURGER_WAR_AUTOTEST_LOG_REPOSITORY=$HOME/catkin_ws/src/burger_war_autotest
 RESULTLOG=$BURGER_WAR_REPOSITORY/autotest/result.log
-SRC_LOG=$RESULTLOG 
-DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20200829.log
+SRC_LOG=$RESULTLOG
+DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20200829-2.log
 LATEST_GITLOG_HASH="xxxx"
 
-echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result" > $RESULTLOG
+RESULT_LOG_HEADER_STR="iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result"
+echo ${RESULT_LOG_HEADER_STR} > $RESULTLOG
 
 LOOP_TIMES=10000
 
@@ -66,11 +67,25 @@ function check_latest_hash(){
 
 function do_push(){
 
-    # push
+    # add result
     pushd $BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result
     git pull
     cp $SRC_LOG $DST_LOG
     git add $DST_LOG
+
+    # add analyzed result
+    pushd $BURGER_WAR_REPOSITORY
+    GITLOG_HASH=`git log | head -1 | cut -d' ' -f2`
+    popd
+    RESULT_ANALYZER_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result_analyzer/result_analyzer_${GITLOG_HASH}.log
+    local RESULT_TMP_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result_tmp.log
+    echo ${RESULT_LOG_HEADER_STR} > ${RESULT_TMP_LOG}
+    cat $DST_LOG | sed -n '/'$GITLOG_HASH'/,$p' > ${RESULT_TMP_LOG}
+    python $BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result_analyzer.py > ${RESULT_ANALYZER_LOG}
+    rm {RESULT_TMP_LOG}
+    git add ${RESULT_ANALYZER_LOG}
+
+    # commit,push
     git commit -m "result.log update"
     git push
 
