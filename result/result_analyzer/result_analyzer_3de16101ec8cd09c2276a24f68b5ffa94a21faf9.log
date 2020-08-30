@@ -4,26 +4,26 @@ detect commit
               vs cheese    vs teriyaki    vs clubhouse
 winning rate:      0.00           0.00            0.00
 onekill win :      0.00           0.00            0.00
-onekill lose:      0.00           0.12            0.00
+onekill lose:      0.00           0.22            0.00
 my_score:          0.00           0.00            0.00
-enemy_score:       2.00           7.25            3.38
+enemy_score:       2.00           7.56            3.33
 
-number of games: 8
+number of games: 9
 total_winning_rate   :  0.00
 total_onekill_rate   :  0.00
 total_score(my)      :  0.00
-total_score(enemy)   :  26.47
-total_score(my-enemy):  -26.47
+total_score(enemy)   :  27.19
+total_score(my-enemy):  -27.19
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.00                   0.00                   0.00                   0.00                   0.00
 onekill win :                0.00                   0.00                   0.00                   0.00                   0.00
-onekill lose:                0.00                   0.00                   0.00                   0.62                   0.12
-my_score:                    0.00                   5.62                   7.62                   0.00                   0.75
-enemy_score:                 6.75                  12.38                  12.25                   9.38                   7.12
+onekill lose:                0.00                   0.00                   0.00                   0.67                   0.11
+my_score:                    0.00                   6.22                   8.00                   0.00                   0.67
+enemy_score:                 6.78                  12.33                  12.22                   9.44                   6.89
 
-number of games: 8
+number of games: 9
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
