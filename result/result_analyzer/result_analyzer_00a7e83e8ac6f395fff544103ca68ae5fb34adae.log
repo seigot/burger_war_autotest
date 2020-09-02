@@ -3,27 +3,27 @@ detect commit
 --- for qualifying rounds (vs cheese,teriyaki,clubhouse) ---  
               vs cheese    vs teriyaki    vs clubhouse
 winning rate:      1.00           1.00            1.00
-onekill win :      0.74           0.99            0.96
+onekill win :      0.75           0.99            0.96
 onekill lose:      0.00           0.00            0.00
-my_score:         11.89          10.54            9.91
+my_score:         11.88          10.54            9.92
 enemy_score:       1.52           0.24            0.14
 
-number of games: 94
+number of games: 95
 total_winning_rate   :  1.00
 total_onekill_rate   :  0.71
-total_score(my)      :  32.35
-total_score(enemy)   :  1.56
-total_score(my-enemy):  30.80
+total_score(my)      :  32.34
+total_score(enemy)   :  1.55
+total_score(my-enemy):  30.79
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
-winning rate:                0.89                   0.81                   0.97                   0.97                   0.78
-onekill win :                0.26                   0.63                   0.85                   0.85                   0.12
+winning rate:                0.88                   0.81                   0.97                   0.97                   0.78
+onekill win :                0.25                   0.63                   0.85                   0.85                   0.12
 onekill lose:                0.00                   0.00                   0.00                   0.01                   0.02
-my_score:                    8.81                  12.43                  14.67                  11.89                   8.30
-enemy_score:                 3.27                   4.98                   4.78                   2.44                   5.11
+my_score:                    8.82                  12.45                  14.67                  11.92                   8.31
+enemy_score:                 3.34                   4.98                   4.76                   2.42                   5.12
 
-number of games: 94
+number of games: 95
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
