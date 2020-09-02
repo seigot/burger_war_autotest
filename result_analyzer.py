@@ -154,7 +154,7 @@ def main():
             continue
 
         result = line.split(',')
-        if len(result) != 7:
+        if len(result) != 8:
             print('error line')
             continue
 
