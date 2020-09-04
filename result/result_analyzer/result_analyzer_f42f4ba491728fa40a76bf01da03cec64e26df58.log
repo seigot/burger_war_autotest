@@ -5,25 +5,25 @@ detect commit
 winning rate:      1.00           1.00            1.00
 onekill win :      0.75           0.98            0.98
 onekill lose:      0.00           0.00            0.00
-my_score:         11.98          10.77           10.02
-enemy_score:       1.48           0.38            0.10
+my_score:         12.02          10.77           10.02
+enemy_score:       1.49           0.38            0.09
 
-number of games: 52
+number of games: 53
 total_winning_rate   :  1.00
-total_onekill_rate   :  0.72
-total_score(my)      :  32.77
-total_score(enemy)   :  1.52
-total_score(my-enemy):  31.25
+total_onekill_rate   :  0.73
+total_score(my)      :  32.81
+total_score(enemy)   :  1.53
+total_score(my-enemy):  31.29
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
-winning rate:                0.90                   0.75                   1.00                   0.94                   0.62
-onekill win :                0.29                   0.58                   0.92                   0.79                   0.12
+winning rate:                0.91                   0.75                   1.00                   0.94                   0.62
+onekill win :                0.28                   0.58                   0.91                   0.77                   0.11
 onekill lose:                0.00                   0.00                   0.00                   0.02                   0.02
-my_score:                    8.79                  12.65                  14.73                  11.94                   8.65
-enemy_score:                 3.58                   6.04                   4.27                   3.02                   6.52
+my_score:                    8.75                  12.64                  14.72                  11.89                   8.60
+enemy_score:                 3.53                   5.96                   4.34                   3.06                   6.42
 
-number of games: 52
+number of games: 53
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
