@@ -3,16 +3,16 @@ detect commit
 --- for qualifying rounds (vs cheese,teriyaki,clubhouse) ---  
               vs cheese    vs teriyaki    vs clubhouse
 winning rate:      0.97           1.00            1.00
-onekill win :      0.42           0.93            1.00
+onekill win :      0.42           0.94            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         10.33          10.39           10.18
-enemy_score:       1.86           0.29            0.11
+my_score:         10.31          10.40           10.18
+enemy_score:       1.84           0.30            0.10
 
-number of games: 76
+number of games: 77
 total_winning_rate   :  0.97
 total_onekill_rate   :  0.39
-total_score(my)      :  30.91
-total_score(enemy)   :  1.89
+total_score(my)      :  30.90
+total_score(enemy)   :  1.88
 total_score(my-enemy):  29.02
 
 --- for final rounds ---  
@@ -20,10 +20,10 @@ total_score(my-enemy):  29.02
 winning rate:                0.99                   0.99                   1.00                   0.97                   0.95
 onekill win :                0.04                   0.86                   0.97                   0.96                   0.16
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.01
-my_score:                    8.50                  13.93                  14.80                  12.88                   9.76
-enemy_score:                 4.18                   3.84                   3.86                   2.62                   5.16
+my_score:                    8.47                  13.92                  14.81                  12.86                   9.74
+enemy_score:                 4.16                   3.83                   3.86                   2.60                   5.16
 
-number of games: 76
+number of games: 77
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
