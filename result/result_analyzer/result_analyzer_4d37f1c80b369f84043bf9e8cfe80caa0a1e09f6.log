@@ -24,25 +24,25 @@ error line
 winning rate:      0.98           1.00            1.00
 onekill win :      0.40           0.93            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         10.25          10.38           10.14
-enemy_score:       1.72           0.28            0.08
+my_score:         10.24          10.39           10.14
+enemy_score:       1.72           0.29            0.08
 
-number of games: 99
+number of games: 100
 total_winning_rate   :  0.98
-total_onekill_rate   :  0.38
-total_score(my)      :  30.78
+total_onekill_rate   :  0.37
+total_score(my)      :  30.77
 total_score(enemy)   :  1.74
-total_score(my-enemy):  29.04
+total_score(my-enemy):  29.03
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.98                   0.96                   1.00                   0.97                   0.95
-onekill win :                0.06                   0.84                   0.98                   0.96                   0.15
+onekill win :                0.07                   0.84                   0.98                   0.96                   0.15
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.01
-my_score:                    8.54                  13.90                  14.78                  12.87                   9.89
-enemy_score:                 4.09                   4.06                   3.90                   2.55                   5.28
+my_score:                    8.56                  13.93                  14.78                  12.87                   9.98
+enemy_score:                 4.06                   4.05                   3.90                   2.54                   5.37
 
-number of games: 99
+number of games: 100
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
