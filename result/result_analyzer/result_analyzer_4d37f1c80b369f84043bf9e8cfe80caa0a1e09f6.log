@@ -43,25 +43,25 @@ error line
 winning rate:      0.98           1.00            1.00
 onekill win :      0.40           0.95            0.99
 onekill lose:      0.00           0.00            0.00
-my_score:         10.27          10.43           10.08
+my_score:         10.26          10.43           10.08
 enemy_score:       1.75           0.24            0.09
 
-number of games: 162
+number of games: 163
 total_winning_rate   :  0.98
-total_onekill_rate   :  0.38
-total_score(my)      :  30.79
+total_onekill_rate   :  0.37
+total_score(my)      :  30.78
 total_score(enemy)   :  1.77
-total_score(my-enemy):  29.02
+total_score(my-enemy):  29.01
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.94                   0.96                   1.00                   0.98                   0.92
-onekill win :                0.08                   0.84                   0.98                   0.94                   0.17
+onekill win :                0.08                   0.83                   0.98                   0.94                   0.17
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.01
-my_score:                    8.75                  13.89                  14.85                  12.81                   9.69
-enemy_score:                 4.35                   4.17                   3.95                   2.56                   5.26
+my_score:                    8.79                  13.87                  14.84                  12.84                   9.71
+enemy_score:                 4.37                   4.17                   3.96                   2.56                   5.29
 
-number of games: 162
+number of games: 163
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
