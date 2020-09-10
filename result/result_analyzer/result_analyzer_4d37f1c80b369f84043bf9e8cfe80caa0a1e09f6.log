@@ -43,13 +43,13 @@ error line
 winning rate:      0.98           1.00            1.00
 onekill win :      0.41           0.95            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         10.28          10.44           10.13
-enemy_score:       1.72           0.26            0.07
+my_score:         10.28          10.44           10.12
+enemy_score:       1.71           0.26            0.07
 
-number of games: 151
+number of games: 152
 total_winning_rate   :  0.98
 total_onekill_rate   :  0.39
-total_score(my)      :  30.85
+total_score(my)      :  30.84
 total_score(enemy)   :  1.73
 total_score(my-enemy):  29.12
 
@@ -58,10 +58,10 @@ total_score(my-enemy):  29.12
 winning rate:                0.95                   0.95                   1.00                   0.98                   0.93
 onekill win :                0.07                   0.83                   0.98                   0.94                   0.18
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.01
-my_score:                    8.72                  13.88                  14.81                  12.75                   9.88
-enemy_score:                 4.35                   4.26                   3.92                   2.52                   5.18
+my_score:                    8.70                  13.88                  14.81                  12.78                   9.84
+enemy_score:                 4.34                   4.25                   3.92                   2.55                   5.14
 
-number of games: 151
+number of games: 152
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
