@@ -7,7 +7,7 @@ BURGER_WAR_DEV_REPOSITORY=$HOME/catkin_ws/src/burger_war_dev
 BURGER_WAR_AUTOTEST_LOG_REPOSITORY=$HOME/catkin_ws/src/burger_war_autotest
 RESULTLOG=$BURGER_WAR_KIT_REPOSITORY/autotest/result.log
 SRC_LOG=$RESULTLOG 
-DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20210203.log
+DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20210204.log
 LATEST_GITLOG_HASH="xxxx"
 
 echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result, my_side" > $RESULTLOG
@@ -100,7 +100,7 @@ function do_result_analyzer(){
     # preprocess
     LATEST_COMMIT_STR=`cat ${INPUTFILE} | grep "latest commit" | tail -1`             # get string
     LATEST_COMMIT_LINE_N=`grep "$LATEST_COMMIT_STR" -n ${INPUTFILE} | cut -d':' -f 1` # get line from string
-    tail +${LINE_N} ${INPUTFILE} > $ANALYZE_FILE_NAME                                 # get file from line
+    tail +${LATEST_COMMIT_LINE_N} ${INPUTFILE} > $ANALYZE_FILE_NAME                                 # get file from line
     # analyze
     python result_analyzer.py > ${OUTPUTFILE}                                         # get analyze matrix
     popd
