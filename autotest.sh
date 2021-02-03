@@ -118,10 +118,11 @@ function do_push(){
     popd
 
     # result analyze push
-    pushd $BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result_analyzer
+    RESULT_ANALYZER_DIR=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result_analyzer
+    pushd $RESULT_ANALYZER_DIR
     TARGET_HASH_ID=`cat ${SRC_LOG} | grep "latest commit" | tail -1 | cut -d':' -f2 | cut -d' ' -f1`
     RESULT_ANALYZE_DST_LOG=result_analyzer-${TARGET_HASH_ID}.log
-    do_result_analyzer $SRC_LOG $RESULT_ANALYZE_DST_LOG
+    do_result_analyzer $SRC_LOG ${RESULT_ANALYZER_DIR}/${RESULT_ANALYZE_DST_LOG}
     git add $RESULT_ANALYZE_DST_LOG
     git commit -m "result_analyzer.log update"
     git push
