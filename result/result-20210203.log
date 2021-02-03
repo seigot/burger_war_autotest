@@ -1,0 +1,10 @@
+iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result, my_side
+#--> latest commit:dfaae62ad6deaf9aabcd8fc69e77d88c1e4d0060 in burger_war_dev
+0, 1, 240, 2021-02-03T04:26:26+00:00, 5, 6, LOSE, r
+0, 2, 240, 2021-02-03T04:31:30+00:00, 18, 7, WIN, r
+0, 3, 240, 2021-02-03T04:36:37+00:00, 2, 13, LOSE, r
+0, 4, 240, 2021-02-03T04:41:44+00:00, 2, 15, LOSE, r
+0, 5, 240, 2021-02-03T04:46:51+00:00, 1, 11, LOSE, r
+0, 6, 240, 2021-02-03T04:51:58+00:00, 13, 10, WIN, r
+0, 7, 240, 2021-02-03T04:57:02+00:00, 0, 12, LOSE, r
+0, 8, 240, 2021-02-03T05:02:10+00:00, 3, 0, WIN, r
