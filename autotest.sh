@@ -64,16 +64,17 @@ function do_game(){
 
 function check_latest_hash(){
 
-    pushd $BURGER_KIT_DEV_REPOSITORY
-    git pull
-    popd
-
-    # check latest hash
     pushd $BURGER_WAR_KIT_REPOSITORY
     git pull
     GITLOG_HASH=`git log | head -1 | cut -d' ' -f2`
+    popd
+
+    # check latest hash
+    pushd $BURGER_WAR_DEV_REPOSITORY
+    git pull
+    GITLOG_HASH=`git log | head -1 | cut -d' ' -f2`
     if [ "$GITLOG_HASH" != "$LATEST_GITLOG_HASH" ];then
-	echo "#--> latest commit:$GITLOG_HASH" >> $RESULTLOG
+	echo "#--> latest commit:${GITLOG_HASH} in burger_war_dev" >> $RESULTLOG
 	LATEST_GITLOG_HASH=$GITLOG_HASH
     fi
     popd
