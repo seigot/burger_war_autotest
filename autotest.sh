@@ -62,7 +62,6 @@ function do_game(){
     popd
 }
 
-<<COMMENTOUT
 function check_latest_hash(){
 
     pushd $BURGER_KIT_DEV_REPOSITORY
@@ -91,12 +90,11 @@ function do_push(){
     git push
     popd
 }
-COMMENTOUT
 
 # main loop
 for ((i=0; i<${LOOP_TIMES}; i++));
 do
-    #check_latest_hash
+    check_latest_hash
     do_game ${i} 1 240 # 180 * 5/4 
     do_game ${i} 2 240 # 180 * 5/4 
     do_game ${i} 3 240 # 180 * 5/4
@@ -108,5 +106,5 @@ do
     do_game ${i} 6 240 # 180 * 5/4
     do_game ${i} 7 240 # 180 * 5/4
     do_game ${i} 8 240 # 180 * 5/4
-    #do_push
+    do_push
 done
