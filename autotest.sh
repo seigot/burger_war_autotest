@@ -6,8 +6,9 @@ BURGER_WAR_KIT_REPOSITORY=$HOME/catkin_ws/src/burger_war_kit
 BURGER_WAR_DEV_REPOSITORY=$HOME/catkin_ws/src/burger_war_dev
 BURGER_WAR_AUTOTEST_LOG_REPOSITORY=$HOME/catkin_ws/src/burger_war_autotest
 RESULTLOG=$BURGER_WAR_KIT_REPOSITORY/autotest/result.log
-SRC_LOG=$RESULTLOG 
-DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-20210204.log
+SRC_LOG=$RESULTLOG
+TODAY=`date +"%Y%m%d"`
+DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-${TODAY}.log
 LATEST_GITLOG_HASH="xxxx"
 
 echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result, my_side" > $RESULTLOG
@@ -84,7 +85,8 @@ function check_latest_hash(){
     git pull
     GITLOG_HASH=`git log | head -1 | cut -d' ' -f2`
     if [ "$GITLOG_HASH" != "$LATEST_GITLOG_HASH" ];then
-	echo "#--> latest commit:${GITLOG_HASH} in burger_war_dev" >> $RESULTLOG
+	TODAY=`date +"%Y%m%d%I%M%S"`
+	echo "#--> latest commit:${GITLOG_HASH} ${TODAY} in burger_war_dev" >> $RESULTLOG
 	LATEST_GITLOG_HASH=$GITLOG_HASH
 	do_catkin_build
     fi
@@ -121,7 +123,8 @@ function do_push(){
     RESULT_ANALYZER_DIR=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result_analyzer
     pushd $RESULT_ANALYZER_DIR
     TARGET_HASH_ID=`cat ${SRC_LOG} | grep "latest commit" | tail -1 | cut -d':' -f2 | cut -d' ' -f1`
-    RESULT_ANALYZE_DST_LOG=result_analyzer-${TARGET_HASH_ID}.log
+    TODAY=`cat ${SRC_LOG} | grep "latest commit" | tail -1 | cut -d':' -f2 | cut -d' ' -f2`
+    RESULT_ANALYZE_DST_LOG=result_analyzer-${TODAY}${TARGET_HASH_ID}.log
     do_result_analyzer $SRC_LOG ${RESULT_ANALYZER_DIR}/${RESULT_ANALYZE_DST_LOG}
     git add $RESULT_ANALYZE_DST_LOG
     git commit -m "result_analyzer.log update"
