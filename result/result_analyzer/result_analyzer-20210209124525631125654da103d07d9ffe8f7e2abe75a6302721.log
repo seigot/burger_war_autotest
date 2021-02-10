@@ -5,25 +5,25 @@ detect commit
 winning rate:      1.00           0.96            1.00
 onekill win :      0.83           0.96            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         12.09           9.87           10.00
-enemy_score:       1.91           0.43            0.00
+my_score:         12.00           9.92           10.00
+enemy_score:       1.83           0.46            0.00
 
-number of games: 23
+number of games: 24
 total_winning_rate   :  0.96
-total_onekill_rate   :  0.79
-total_score(my)      :  31.96
-total_score(enemy)   :  1.91
-total_score(my-enemy):  30.04
+total_onekill_rate   :  0.80
+total_score(my)      :  31.92
+total_score(enemy)   :  1.83
+total_score(my-enemy):  30.08
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.96                   1.00                   0.96                   1.00                   1.00
-onekill win :                0.39                   0.96                   0.43                   1.00                   0.26
+onekill win :                0.42                   0.96                   0.46                   1.00                   0.25
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
-my_score:                   11.48                  14.09                  15.65                  14.91                   9.48
-enemy_score:                 4.00                   3.17                   8.48                   3.57                   1.61
+my_score:                   11.54                  14.17                  15.62                  14.83                   9.33
+enemy_score:                 3.92                   3.21                   8.33                   3.54                   1.58
 
-number of games: 23
+number of games: 24
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
