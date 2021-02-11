@@ -5,25 +5,25 @@ detect commit
 winning rate:      1.00           1.00            1.00
 onekill win :      1.00           1.00            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         12.50          10.25           10.00
-enemy_score:       1.50           0.25            0.00
+my_score:         12.00          10.20           10.00
+enemy_score:       1.20           0.20            0.00
 
-number of games: 4
+number of games: 5
 total_winning_rate   :  1.00
 total_onekill_rate   :  1.00
-total_score(my)      :  32.75
-total_score(enemy)   :  1.50
-total_score(my-enemy):  31.25
+total_score(my)      :  32.20
+total_score(enemy)   :  1.20
+total_score(my-enemy):  31.00
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                1.00                   1.00                   1.00                   1.00                   1.00
-onekill win :                0.50                   0.75                   0.50                   1.00                   0.50
+onekill win :                0.40                   0.80                   0.60                   1.00                   0.60
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
-my_score:                   12.75                  13.75                  16.75                  13.75                  10.75
-enemy_score:                 4.25                   4.75                   8.75                   3.50                   3.50
+my_score:                   11.60                  13.80                  16.00                  13.80                  11.60
+enemy_score:                 4.20                   4.40                   7.40                   3.40                   3.60
 
-number of games: 4
+number of games: 5
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
