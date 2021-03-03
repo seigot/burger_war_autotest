@@ -5,25 +5,25 @@ detect commit
 winning rate:      1.00           1.00            0.94
 onekill win :      0.91           0.99            0.86
 onekill lose:      0.00           0.00            0.00
-my_score:         11.83          11.11           10.39
-enemy_score:       1.66           1.06            1.76
+my_score:         11.82          11.11           10.40
+enemy_score:       1.66           1.06            1.75
 
-number of games: 95
+number of games: 96
 total_winning_rate   :  0.94
-total_onekill_rate   :  0.77
+total_onekill_rate   :  0.78
 total_score(my)      :  33.33
-total_score(enemy)   :  3.53
-total_score(my-enemy):  29.79
+total_score(enemy)   :  3.52
+total_score(my-enemy):  29.82
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.96                   0.73                   0.94                   0.96                   0.99
-onekill win :                0.80                   0.47                   0.86                   0.61                   0.92
+onekill win :                0.80                   0.48                   0.86                   0.61                   0.92
 onekill lose:                0.02                   0.02                   0.00                   0.00                   0.00
-my_score:                   12.16                  13.74                  16.57                  13.27                  11.53
-enemy_score:                 3.25                   8.64                   6.63                   5.77                   0.12
+my_score:                   12.15                  13.75                  16.55                  13.28                  11.53
+enemy_score:                 3.23                   8.60                   6.61                   5.74                   0.11
 
-number of games: 95
+number of games: 96
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
