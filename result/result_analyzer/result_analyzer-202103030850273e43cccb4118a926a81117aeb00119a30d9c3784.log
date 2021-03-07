@@ -5,25 +5,25 @@ detect commit
 winning rate:      0.98           0.99            1.00
 onekill win :      0.97           0.99            0.99
 onekill lose:      0.00           0.00            0.00
-my_score:         10.93          10.05            9.97
-enemy_score:       0.31           0.16            0.01
+my_score:         10.96          10.05            9.97
+enemy_score:       0.32           0.16            0.01
 
-number of games: 118
+number of games: 119
 total_winning_rate   :  0.97
 total_onekill_rate   :  0.96
-total_score(my)      :  30.95
-total_score(enemy)   :  0.31
-total_score(my-enemy):  30.63
+total_score(my)      :  30.97
+total_score(enemy)   :  0.32
+total_score(my-enemy):  30.65
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                0.99                   0.94                   0.99                   0.99                   0.99
-onekill win :                0.70                   0.86                   0.70                   0.95                   0.36
+onekill win :                0.71                   0.86                   0.71                   0.95                   0.36
 onekill lose:                0.00                   0.00                   0.00                   0.01                   0.00
-my_score:                   13.07                  13.69                  14.75                  14.26                  10.23
-enemy_score:                 3.34                   3.78                   5.42                   3.26                   2.13
+my_score:                   13.08                  13.72                  14.76                  14.28                  10.24
+enemy_score:                 3.34                   3.79                   5.42                   3.27                   2.12
 
-number of games: 118
+number of games: 119
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
