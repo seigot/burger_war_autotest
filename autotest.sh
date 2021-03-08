@@ -147,5 +147,7 @@ do
     do_game ${i} 6 240 # 180 * 5/4
     do_game ${i} 7 240 # 180 * 5/4
     do_game ${i} 8 240 # 180 * 5/4
+    do_game ${i} 9 240 # 180 * 5/4
+    do_game ${i} 10 240 # 180 * 5/4
     do_push
 done
