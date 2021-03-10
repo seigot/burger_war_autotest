@@ -5,32 +5,32 @@ detect commit
 winning rate:      1.00           1.00            1.00
 onekill win :      0.96           0.98            0.98
 onekill lose:      0.00           0.00            0.00
-my_score:         10.71          10.13            9.92
-enemy_score:       0.21           0.17            0.02
+my_score:         10.77          10.15            9.92
+enemy_score:       0.23           0.19            0.02
 
-number of games: 52
+number of games: 53
 total_winning_rate   :  1.00
-total_onekill_rate   :  0.92
-total_score(my)      :  30.77
-total_score(enemy)   :  0.21
-total_score(my-enemy):  30.55
+total_onekill_rate   :  0.93
+total_score(my)      :  30.85
+total_score(enemy)   :  0.23
+total_score(my-enemy):  30.62
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                1.00                   0.94                   0.98                   1.00                   1.00
-onekill win :                0.81                   0.81                   0.79                   1.00                   0.37
+onekill win :                0.81                   0.81                   0.79                   1.00                   0.36
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
-my_score:                   13.87                  13.65                  14.19                  15.02                  10.81
-enemy_score:                 3.77                   3.83                   5.06                   3.69                   2.29
+my_score:                   13.87                  13.72                  14.21                  14.98                  10.77
+enemy_score:                 3.75                   3.81                   5.06                   3.66                   2.26
 --
               vs enemy_bot_level9    vs enemy_bot_level10
 winning rate:                0.94                    0.98
-onekill win :                0.67                    0.94
+onekill win :                0.68                    0.94
 onekill lose:                0.00                    0.00
-my_score:                   12.00                   13.62
-enemy_score:                 3.38                    2.63
+my_score:                   11.98                   13.66
+enemy_score:                 3.34                    2.66
 
-number of games: 52
+number of games: 53
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
