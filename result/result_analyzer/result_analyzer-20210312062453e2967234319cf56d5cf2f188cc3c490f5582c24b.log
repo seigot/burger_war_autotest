@@ -8,29 +8,29 @@ onekill lose:      0.00           0.00            0.00
 my_score:         10.98          10.22           10.00
 enemy_score:       0.25           0.20            0.00
 
-number of games: 193
+number of games: 194
 total_winning_rate   :  1.00
 total_onekill_rate   :  0.99
 total_score(my)      :  31.20
 total_score(enemy)   :  0.25
-total_score(my-enemy):  30.95
+total_score(my-enemy):  30.94
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                1.00                   0.97                   0.99                   1.00                   1.00
-onekill win :                0.83                   0.85                   0.76                   1.00                   0.37
+onekill win :                0.82                   0.85                   0.76                   1.00                   0.37
 onekill lose:                0.00                   0.01                   0.00                   0.00                   0.00
-my_score:                   14.14                  13.39                  14.82                  14.43                  10.60
-enemy_score:                 3.41                   3.27                   5.38                   2.99                   1.95
+my_score:                   14.12                  13.39                  14.81                  14.44                  10.59
+enemy_score:                 3.41                   3.28                   5.37                   2.99                   1.94
 --
               vs enemy_bot_level9    vs enemy_bot_level10
 winning rate:                0.95                    1.00
 onekill win :                0.68                    0.01
 onekill lose:                0.01                    0.00
 my_score:                   12.25                    9.01
-enemy_score:                 3.65                    0.00
+enemy_score:                 3.64                    0.00
 
-number of games: 193
+number of games: 194
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
