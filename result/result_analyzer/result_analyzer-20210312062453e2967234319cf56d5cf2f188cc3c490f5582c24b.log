@@ -5,13 +5,13 @@ detect commit
 winning rate:      1.00           1.00            1.00
 onekill win :      0.99           1.00            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         10.99          10.22           10.00
+my_score:         10.99          10.21           10.00
 enemy_score:       0.26           0.20            0.00
 
-number of games: 195
+number of games: 196
 total_winning_rate   :  1.00
 total_onekill_rate   :  0.99
-total_score(my)      :  31.21
+total_score(my)      :  31.20
 total_score(enemy)   :  0.26
 total_score(my-enemy):  30.95
 
@@ -20,8 +20,8 @@ total_score(my-enemy):  30.95
 winning rate:                1.00                   0.97                   0.99                   1.00                   1.00
 onekill win :                0.83                   0.85                   0.76                   1.00                   0.36
 onekill lose:                0.00                   0.01                   0.00                   0.00                   0.00
-my_score:                   14.12                  13.41                  14.81                  14.45                  10.56
-enemy_score:                 3.41                   3.29                   5.41                   3.00                   1.94
+my_score:                   14.13                  13.41                  14.81                  14.45                  10.54
+enemy_score:                 3.41                   3.29                   5.40                   3.01                   1.93
 --
               vs enemy_bot_level9    vs enemy_bot_level10
 winning rate:                0.95                    1.00
@@ -30,7 +30,7 @@ onekill lose:                0.01                    0.00
 my_score:                   12.26                    9.01
 enemy_score:                 3.64                    0.00
 
-number of games: 195
+number of games: 196
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
