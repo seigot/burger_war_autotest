@@ -8,7 +8,7 @@ onekill lose:      0.00           0.00            0.00
 my_score:         10.98          10.18            9.99
 enemy_score:       0.26           0.19            0.01
 
-number of games: 905
+number of games: 906
 total_winning_rate   :  1.00
 total_onekill_rate   :  0.99
 total_score(my)      :  31.15
@@ -20,17 +20,17 @@ total_score(my-enemy):  30.88
 winning rate:                1.00                   0.94                   1.00                   1.00                   1.00
 onekill win :                0.82                   0.73                   0.77                   0.99                   0.32
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
-my_score:                   14.04                  12.54                  14.74                  14.38                  10.20
-enemy_score:                 3.41                   3.37                   5.26                   3.00                   1.81
+my_score:                   14.04                  12.54                  14.74                  14.37                  10.19
+enemy_score:                 3.41                   3.37                   5.27                   3.00                   1.81
 --
               vs enemy_bot_level9    vs enemy_bot_level10
 winning rate:                0.97                    1.00
 onekill win :                0.72                    0.01
 onekill lose:                0.00                    0.00
-my_score:                   12.01                    9.01
+my_score:                   12.00                    9.01
 enemy_score:                 3.00                    0.01
 
-number of games: 905
+number of games: 906
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
