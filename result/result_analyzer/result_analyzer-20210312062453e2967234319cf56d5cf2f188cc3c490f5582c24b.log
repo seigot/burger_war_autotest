@@ -5,23 +5,23 @@ detect commit
 winning rate:      1.00           1.00            1.00
 onekill win :      0.99           1.00            1.00
 onekill lose:      0.00           0.00            0.00
-my_score:         10.98          10.18            9.99
+my_score:         10.99          10.18            9.99
 enemy_score:       0.27           0.18            0.01
 
-number of games: 1091
+number of games: 1092
 total_winning_rate   :  1.00
 total_onekill_rate   :  0.99
-total_score(my)      :  31.15
+total_score(my)      :  31.16
 total_score(enemy)   :  0.27
-total_score(my-enemy):  30.88
+total_score(my-enemy):  30.89
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
 winning rate:                1.00                   0.95                   1.00                   1.00                   1.00
 onekill win :                0.83                   0.75                   0.77                   0.99                   0.32
 onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
-my_score:                   14.04                  12.69                  14.77                  14.40                  10.24
-enemy_score:                 3.41                   3.34                   5.32                   3.01                   1.81
+my_score:                   14.04                  12.69                  14.77                  14.40                  10.25
+enemy_score:                 3.42                   3.34                   5.32                   3.01                   1.81
 --
               vs enemy_bot_level9    vs enemy_bot_level10
 winning rate:                0.97                    1.00
@@ -30,7 +30,7 @@ onekill lose:                0.00                    0.00
 my_score:                   12.02                    9.01
 enemy_score:                 2.99                    0.01
 
-number of games: 1091
+number of games: 1092
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
