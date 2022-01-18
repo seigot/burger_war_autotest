@@ -10,8 +10,7 @@ SRC_LOG=$RESULTLOG
 TODAY=`date +"%Y%m%d"`
 DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-${TODAY}.log
 LATEST_GITLOG_HASH="xxxx"
-
-echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result, my_side" > $RESULTLOG
+LATEST_GITLOG_HASH_TXT="latest_gitlog_hash.txt"
 
 LOOP_TIMES=100000
 
@@ -52,6 +51,14 @@ function do_game(){
     fi
 
     # output result
+    ## result log name
+    pushd ${BURGER_WAR_DEV_REPOSITORY}
+    USER_NAME=`git remote -v | head -1 | cut -d/ -f 4`
+    BRANCH_NAME=`git branch | cut -d' ' -f2`
+    popd
+    RESULTLOG=$BURGER_WAR_KIT_REPOSITORY/autotest/result-${USER_NAME}-${BRANCH_NAME}.log
+
+    ## output
     echo "$ITERATION, $ENEMY_LEVEL, $GAME_TIME, $DATE, $MY_SCORE, $ENEMY_SCORE, $BATTLE_RESULT, $MY_SIDE" >> $RESULTLOG
     tail -1 $RESULTLOG
     
@@ -70,6 +77,7 @@ function do_catkin_build(){
     catkin clean -y
     catkin build
     source $HOME/.bashrc
+    source ~/catkin_ws/devel/setup.bash
     popd
 }
 
@@ -84,10 +92,24 @@ function check_latest_hash(){
     pushd $BURGER_WAR_DEV_REPOSITORY
     git pull
     GITLOG_HASH=`git log | head -1 | cut -d' ' -f2`
+    LATEST_GITLOG_HASH=`cat $LATEST_GITLOG_HASH_TXT`
+    if [ -z "${LATEST_GITLOG_HASH}" ]; then
+	LATEST_GITLOG_HASH="xxx"
+    fi 
     if [ "$GITLOG_HASH" != "$LATEST_GITLOG_HASH" ];then
 	TODAY=`date +"%Y%m%d%I%M%S"`
-	echo "#--> latest commit:${GITLOG_HASH} ${TODAY} in burger_war_dev" >> $RESULTLOG
-	LATEST_GITLOG_HASH=$GITLOG_HASH
+	## result log name
+	pushd ${BURGER_WAR_DEV_REPOSITORY}
+	USER_NAME=`git remote -v | head -1 | cut -d/ -f 4`
+	BRANCH_NAME=`git branch | cut -d' ' -f2`
+	popd
+	RESULTLOG=$BURGER_WAR_KIT_REPOSITORY/autotest/result-${USER_NAME}-${BRANCH_NAME}.log
+	## update result log
+	if [ ! -e ${RESULTLOG} ]; then
+	    echo "iteration, enemy_level, game_time(s), date, my_score, enemy_score, battle_result, my_side" > ${RESULTLOG}
+	fi
+	echo "#--> latest commit:${GITLOG_HASH} ${TODAY} in burger_war_dev" >> ${RESULTLOG}
+	echo ${GITLOG_HASH} > ${LATEST_GITLOG_HASH_TXT}
 	do_catkin_build
     fi
     popd
@@ -110,6 +132,14 @@ function do_result_analyzer(){
 
 function do_push(){
 
+    pushd ${BURGER_WAR_DEV_REPOSITORY}
+    USER_NAME=`git remote -v | head -1 | cut -d/ -f 4`
+    BRANCH_NAME=`git branch | cut -d' ' -f2`
+    popd
+
+    SRC_LOG=$BURGER_WAR_KIT_REPOSITORY/autotest/result-${USER_NAME}-${BRANCH_NAME}.log
+    DST_LOG=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result-${USER_NAME}-${BRANCH_NAME}-${TODAY}.log
+
     # result log push
     pushd $BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result
     git pull
@@ -121,10 +151,11 @@ function do_push(){
 
     # result analyze push
     RESULT_ANALYZER_DIR=$BURGER_WAR_AUTOTEST_LOG_REPOSITORY/result/result_analyzer
+    mkdir -p $RESULT_ANALYZER_DIR
     pushd $RESULT_ANALYZER_DIR
     TARGET_HASH_ID=`cat ${SRC_LOG} | grep "latest commit" | tail -1 | cut -d':' -f2 | cut -d' ' -f1`
     TODAY=`cat ${SRC_LOG} | grep "latest commit" | tail -1 | cut -d':' -f2 | cut -d' ' -f2`
-    RESULT_ANALYZE_DST_LOG=result_analyzer-${TODAY}${TARGET_HASH_ID}.log
+    RESULT_ANALYZE_DST_LOG=result_analyzer-${USER_NAME}-${BRANCH_NAME}-${TODAY}-${TARGET_HASH_ID}.log
     do_result_analyzer $SRC_LOG ${RESULT_ANALYZER_DIR}/${RESULT_ANALYZE_DST_LOG}
     git add $RESULT_ANALYZE_DST_LOG
     git commit -m "result_analyzer.log update"
@@ -132,22 +163,63 @@ function do_push(){
     popd
 }
 
+function prepare_user_directory(){
+
+    local UNAME=${1}
+    local CURRENT_UNAME=`echo ${UNAME} | cut -d@ -f1`
+    local CURRENT_BRANCH=`echo ${UNAME} | cut -d@ -f2`
+    TMP_BURGER_WAR_DEV_DIRECTORY=${HOME}/tmp/burger_war_dev
+
+    cd ~
+    # save current directory
+    if [ -d ${BURGER_WAR_DEV_REPOSITORY} ]; then
+	pushd ${BURGER_WAR_DEV_REPOSITORY}
+	OLD_USER_NAME=`git remote -v | head -1 | cut -d/ -f 4`
+	OLD_BRANCH_NAME=`git branch | cut -d' ' -f2`
+	TMP_DIRECTORY="${TMP_BURGER_WAR_DEV_DIRECTORY}.${OLD_USER_NAME}.${OLD_BRANCH_NAME}"
+	popd
+	mv ${BURGER_WAR_DEV_REPOSITORY} ${TMP_DIRECTORY}
+    fi
+
+    TMP_DIRECTORY="${TMP_BURGER_WAR_DEV_DIRECTORY}.${CURRENT_UNAME}.${CURRENT_BRANCH}"
+    if [ -d ${TMP_DIRECTORY} ]; then
+	mv ${TMP_DIRECTORY} ${BURGER_WAR_DEV_REPOSITORY}
+    else
+	cd ${CATKIN_WS_DIR}/src
+	echo "git clone https://github.com/${CURRENT_UNAME}/burger_war_dev -b ${CURRENT_BRANCH}"
+	git clone https://github.com/${CURRENT_UNAME}/burger_war_dev -b ${CURRENT_BRANCH}
+    fi
+    do_catkin_build
+}
+
+UNAME=( # uname@branch
+    KoutaOhishi@develop
+    KoutaOhishi@main
+    #seigot
+)
+
 # main loop
 for ((i=0; i<${LOOP_TIMES}; i++));
 do
-    check_latest_hash
-    do_game ${i} 1 240 # 180 * 5/4 
-    do_game ${i} 2 240 # 180 * 5/4 
-    do_game ${i} 3 240 # 180 * 5/4
-    #do_game ${i} 1 240 "b" # 180 * 5/4 # only enemy level1,2,3 works r side
-    #do_game ${i} 2 240 "b" # 180 * 5/4 # 
-    #do_game ${i} 3 240 "b" # 180 * 5/4 # 
-    do_game ${i} 4 240 # 180 * 5/4
-    do_game ${i} 5 240 # 180 * 5/4
-    do_game ${i} 6 240 # 180 * 5/4
-    do_game ${i} 7 240 # 180 * 5/4
-    do_game ${i} 8 240 # 180 * 5/4
-    do_game ${i} 9 240 # 180 * 5/4
-    do_game ${i} 10 240 # 180 * 5/4
-    do_push
+    for uname in "${UNAME[@]}"
+    do
+	prepare_user_directory ${uname}
+	check_latest_hash
+	do_game ${i} 1 240 # 180 * 5/4 
+	do_game ${i} 2 240 # 180 * 5/4 
+	do_game ${i} 3 240 # 180 * 5/4
+	#do_game ${i} 1 240 "b" # 180 * 5/4 # only enemy level1,2,3 works r side
+	#do_game ${i} 2 240 "b" # 180 * 5/4 # 
+	#do_game ${i} 3 240 "b" # 180 * 5/4 # 
+	do_game ${i} 4 240 # 180 * 5/4
+	do_game ${i} 5 240 # 180 * 5/4
+	do_game ${i} 6 240 # 180 * 5/4
+	do_game ${i} 7 240 # 180 * 5/4
+	do_game ${i} 8 240 # 180 * 5/4
+	do_game ${i} 9 240 # 180 * 5/4
+	do_game ${i} 10 240 # 180 * 5/4
+	do_game ${i} 11 240 # 180 * 5/4
+	do_game ${i} 12 240 # 180 * 5/4
+	do_push
+    done
 done
