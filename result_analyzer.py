@@ -134,7 +134,8 @@ class fight_result:
 
 def main():
     # path = 'autotest/result-20200806.log'
-    path = '/home/ubuntu/catkin_ws/src/burger_war_autotest/result_tmp.log'
+    #path = 'autotest/result.log'
+    path = '/home/ubuntu/catkin_ws/src/burger_war_autotest/result_tmp.log'    
     f = open(path)
     data = f.readlines()
     cheese = fight_result()
@@ -147,8 +148,10 @@ def main():
     enemy_bot_level8 = fight_result()
     enemy_bot_level9 = fight_result()
     enemy_bot_level10 = fight_result()
+    enemy_bot_level11 = fight_result()
+    enemy_bot_level12 = fight_result()
 
-    for line in data:
+    for line in data:    
         if 'commit' in line:
             print('detect commit')
             cheese.set_commit_seq()
@@ -161,6 +164,8 @@ def main():
             enemy_bot_level8.set_commit_seq()
             enemy_bot_level9.set_commit_seq()
             enemy_bot_level10.set_commit_seq()            
+            enemy_bot_level11.set_commit_seq()
+            enemy_bot_level12.set_commit_seq()            
             continue
 
         result = line.split(',')
@@ -188,6 +193,10 @@ def main():
             enemy_bot_level9.add_score(float(result[4]), float(result[5]))
         elif int(result[1]) == 10:
             enemy_bot_level10.add_score(float(result[4]), float(result[5]))
+        elif int(result[1]) == 11:
+            enemy_bot_level11.add_score(float(result[4]), float(result[5]))
+        elif int(result[1]) == 12:
+            enemy_bot_level12.add_score(float(result[4]), float(result[5]))
         else:
             print('unknown enemy')
             continue
@@ -273,26 +282,36 @@ def main():
           + '{:.2f}'.format(enemy_bot_level8.enemy_average()).rjust(len('vs enemy_bot_level8')))
 
     print('--')
-    print('              vs enemy_bot_level9    vs enemy_bot_level10')
+    print('              vs enemy_bot_level9    vs enemy_bot_level10    vs enemy_bot_level11    vs enemy_bot_level12')
     print('winning rate: '
           + '{:.2f}'.format(enemy_bot_level9.winning_rate()).rjust(len('vs enemy_bot_level9'))+'    '
-          + '{:.2f}'.format(enemy_bot_level10.winning_rate()).rjust(len('vs enemy_bot_level10')))
+          + '{:.2f}'.format(enemy_bot_level10.winning_rate()).rjust(len('vs enemy_bot_level10'))+'    '
+          + '{:.2f}'.format(enemy_bot_level11.winning_rate()).rjust(len('vs enemy_bot_level11'))+'    '
+          + '{:.2f}'.format(enemy_bot_level12.winning_rate()).rjust(len('vs enemy_bot_level12')))
 
     print('onekill win : '
           + '{:.2f}'.format(enemy_bot_level9.onekillwin_rate()).rjust(len('vs enemy_bot_level9'))+'    '
-          + '{:.2f}'.format(enemy_bot_level10.onekillwin_rate()).rjust(len('vs enemy_bot_level10')))
+          + '{:.2f}'.format(enemy_bot_level10.onekillwin_rate()).rjust(len('vs enemy_bot_level10'))+'    '
+          + '{:.2f}'.format(enemy_bot_level11.onekillwin_rate()).rjust(len('vs enemy_bot_level11'))+'    '
+          + '{:.2f}'.format(enemy_bot_level12.onekillwin_rate()).rjust(len('vs enemy_bot_level12')))
 
     print('onekill lose: '
           + '{:.2f}'.format(enemy_bot_level9.onekilllose_rate()).rjust(len('vs enemy_bot_level9'))+'    '
-          + '{:.2f}'.format(enemy_bot_level10.onekilllose_rate()).rjust(len('vs enemy_bot_level10')))
+          + '{:.2f}'.format(enemy_bot_level10.onekilllose_rate()).rjust(len('vs enemy_bot_level10'))+'    '
+          + '{:.2f}'.format(enemy_bot_level11.onekilllose_rate()).rjust(len('vs enemy_bot_level11'))+'    '
+          + '{:.2f}'.format(enemy_bot_level12.onekilllose_rate()).rjust(len('vs enemy_bot_level12')))
 
     print('my_score:     '
           + '{:.2f}'.format(enemy_bot_level9.my_average()).rjust(len('vs enemy_bot_level9'))+'    '
-          + '{:.2f}'.format(enemy_bot_level10.my_average()).rjust(len('vs enemy_bot_level10')))
+          + '{:.2f}'.format(enemy_bot_level10.my_average()).rjust(len('vs enemy_bot_level10'))+'    '
+          + '{:.2f}'.format(enemy_bot_level11.my_average()).rjust(len('vs enemy_bot_level11'))+'    '
+          + '{:.2f}'.format(enemy_bot_level12.my_average()).rjust(len('vs enemy_bot_level12')))
 
     print('enemy_score:  '
           + '{:.2f}'.format(enemy_bot_level9.enemy_average()).rjust(len('vs enemy_bot_level9'))+'    '
-          + '{:.2f}'.format(enemy_bot_level10.enemy_average()).rjust(len('vs enemy_bot_level10')))
+          + '{:.2f}'.format(enemy_bot_level10.enemy_average()).rjust(len('vs enemy_bot_level10'))+'    '
+          + '{:.2f}'.format(enemy_bot_level11.enemy_average()).rjust(len('vs enemy_bot_level11'))+'    '
+          + '{:.2f}'.format(enemy_bot_level12.enemy_average()).rjust(len('vs enemy_bot_level12')))
 
     print('\nnumber of games: '+str(len(enemy_bot_level5.result)))
     print('# each enemy_bot is maybe following... in detail, please see enemy_bot/README.md')
@@ -303,6 +322,8 @@ def main():
     print('#  - level8: Gantetsu')
     print('#  - level9: YusukeMori3250(Tokuyo-Unagi)')
     print('#  - level10: Arthur-MA2(X-ranger)')
-
+    print('#  - level11: shunsuke-f(sampleprogram)')
+    print('#  - level12: maou')
+    
 if __name__ == "__main__":
     main()
