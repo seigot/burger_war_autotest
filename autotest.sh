@@ -195,6 +195,8 @@ function prepare_user_directory(){
 UNAME=( # uname@branch
     KoutaOhishi@develop
     KoutaOhishi@main
+    ce31062@develop
+    ce31062@main    
     #seigot
 )
 
@@ -205,21 +207,21 @@ do
     do
 	prepare_user_directory ${uname}
 	check_latest_hash
-	do_game ${i} 1 240 # 180 * 5/4 
-	do_game ${i} 2 240 # 180 * 5/4 
-	do_game ${i} 3 240 # 180 * 5/4
+	do_game ${i} 1 190 # 180 * 5/4 
+	do_game ${i} 2 190 # 180 * 5/4 
+	do_game ${i} 3 190 # 180 * 5/4
 	#do_game ${i} 1 240 "b" # 180 * 5/4 # only enemy level1,2,3 works r side
 	#do_game ${i} 2 240 "b" # 180 * 5/4 # 
 	#do_game ${i} 3 240 "b" # 180 * 5/4 # 
-	do_game ${i} 4 240 # 180 * 5/4
-	do_game ${i} 5 240 # 180 * 5/4
-	do_game ${i} 6 240 # 180 * 5/4
-	do_game ${i} 7 240 # 180 * 5/4
-	do_game ${i} 8 240 # 180 * 5/4
-	do_game ${i} 9 240 # 180 * 5/4
-	do_game ${i} 10 240 # 180 * 5/4
-	do_game ${i} 11 240 # 180 * 5/4
-	do_game ${i} 12 240 # 180 * 5/4
+	do_game ${i} 4 190 # 180 * 5/4
+	do_game ${i} 5 190 # 180 * 5/4
+	do_game ${i} 6 190 # 180 * 5/4
+	do_game ${i} 7 190 # 180 * 5/4
+	do_game ${i} 8 190 # 180 * 5/4
+	do_game ${i} 9 190 # 180 * 5/4
+	do_game ${i} 10 190 # 180 * 5/4
+	do_game ${i} 11 190 # 180 * 5/4
+	do_game ${i} 12 190 # 180 * 5/4
 	do_push
     done
 done
