@@ -1,0 +1,43 @@
+detect commit
+-------------------------------------------------------------
+--- for qualifying rounds (vs cheese,teriyaki,clubhouse) ---  
+              vs cheese    vs teriyaki    vs clubhouse
+winning rate:      1.00           1.00            1.00
+onekill win :      0.00           1.00            1.00
+onekill lose:      0.00           0.00            0.00
+my_score:          8.00          10.00           10.00
+enemy_score:       1.00           0.00            0.00
+
+number of games: 1
+total_winning_rate   :  1.00
+total_onekill_rate   :  0.00
+total_score(my)      :  28.00
+total_score(enemy)   :  1.00
+total_score(my-enemy):  27.00
+
+--- for final rounds ---  
+              vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
+winning rate:                1.00                   1.00                   1.00                   1.00                   1.00
+onekill win :                0.00                   0.00                   1.00                   1.00                   0.00
+onekill lose:                0.00                   0.00                   0.00                   0.00                   0.00
+my_score:                    8.00                   8.00                  15.00                  14.00                   5.00
+enemy_score:                 2.00                   7.00                   4.00                   3.00                   3.00
+--
+              vs enemy_bot_level9    vs enemy_bot_level10    vs enemy_bot_level11    vs enemy_bot_level12
+winning rate:                1.00                    1.00                    1.00                    0.00
+onekill win :                0.00                    1.00                    1.00                    0.00
+onekill lose:                0.00                    0.00                    0.00                    0.00
+my_score:                    4.00                   10.00                   12.00                    4.00
+enemy_score:                 1.00                    0.00                    1.00                    8.00
+
+number of games: 1
+# each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
+#  - level4: old seigot
+#  - level5: 0xDEADBEEF
+#  - level6: sugarman
+#  - level7: raucha(ikepoyo)
+#  - level8: Gantetsu
+#  - level9: YusukeMori3250(Tokuyo-Unagi)
+#  - level10: Arthur-MA2(X-ranger)
+#  - level11: shunsuke-f(sampleprogram)
+#  - level12: maou
