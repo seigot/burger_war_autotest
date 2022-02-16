@@ -2,35 +2,35 @@ detect commit
 -------------------------------------------------------------
 --- for qualifying rounds (vs cheese,teriyaki,clubhouse) ---  
               vs cheese    vs teriyaki    vs clubhouse
-winning rate:      0.89           1.00            0.85
-onekill win :      0.45           0.81            0.45
+winning rate:      0.88           1.00            0.85
+onekill win :      0.44           0.81            0.46
 onekill lose:      0.00           0.00            0.02
-my_score:         11.91          11.51           12.53
-enemy_score:       5.49           1.77            6.72
+my_score:         11.85          11.50           12.48
+enemy_score:       5.58           1.73            6.58
 
-number of games: 47
-total_winning_rate   :  0.76
+number of games: 48
+total_winning_rate   :  0.75
 total_onekill_rate   :  0.16
-total_score(my)      :  35.96
-total_score(enemy)   :  17.36
-total_score(my-enemy):  18.59
+total_score(my)      :  35.83
+total_score(enemy)   :  16.97
+total_score(my-enemy):  18.87
 
 --- for final rounds ---  
               vs enemy_bot_level4    vs enemy_bot_level5    vs enemy_bot_level6    vs enemy_bot_level7    vs enemy_bot_level8
-winning rate:                0.51                   0.53                   0.53                   0.36                   0.53
-onekill win :                0.26                   0.26                   0.21                   0.11                   0.13
-onekill lose:                0.09                   0.26                   0.28                   0.26                   0.09
-my_score:                   10.87                  10.49                  11.85                  10.19                  11.91
-enemy_score:                 9.79                  10.28                  11.94                  12.21                  10.70
+winning rate:                0.50                   0.52                   0.54                   0.38                   0.52
+onekill win :                0.25                   0.25                   0.23                   0.10                   0.12
+onekill lose:                0.10                   0.27                   0.27                   0.25                   0.08
+my_score:                   10.77                  10.38                  11.98                  10.17                  11.88
+enemy_score:                 9.92                  10.40                  11.85                  12.12                  10.79
 --
               vs enemy_bot_level9    vs enemy_bot_level10    vs enemy_bot_level11    vs enemy_bot_level12
-winning rate:                0.45                    0.70                    0.94                    0.00
-onekill win :                0.19                    0.23                    0.66                    0.00
-onekill lose:                0.26                    0.09                    0.00                    0.83
-my_score:                   11.21                   10.57                   11.60                    4.49
-enemy_score:                11.70                    7.49                    4.04                   14.64
+winning rate:                0.44                    0.69                    0.94                    0.00
+onekill win :                0.19                    0.23                    0.67                    0.00
+onekill lose:                0.25                    0.08                    0.00                    0.81
+my_score:                   11.23                   10.62                   11.58                    4.65
+enemy_score:                11.75                    7.65                    3.98                   14.62
 
-number of games: 47
+number of games: 48
 # each enemy_bot is maybe following... in detail, please see enemy_bot/README.md
 #  - level4: old seigot
 #  - level5: 0xDEADBEEF
